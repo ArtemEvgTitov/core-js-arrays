@@ -39,7 +39,7 @@ function getIntervalArray(start, end) {
  */
 function sumArrays(arr1, arr2) {
   const result = [];
-  for (let i = 0; i < arr1.length; i++) {
+  for (let i = 0; i < arr1.length; i += 1) {
     result.push(arr1[i] + arr2[i]);
   }
   return result;
@@ -286,8 +286,17 @@ function toStringList(arr) {
  *   distinct([ 1, 1, 2, 2, 3, 3, 4, 4]) => [ 1, 2, 3, 4]
  *   distinct([]) => []
  */
-function distinct(/* arr */) {
-  throw new Error('Not implemented');
+function distinct(arr) {
+  if (arr.length === 0) {
+    return arr;
+  }
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!result.includes(arr[i])) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
 }
 
 /**
