@@ -243,6 +243,9 @@ function getHead(arr, count) {
  *    getTail([ 'a', 'b', 'c', 'd'], 0) => []
  */
 function getTail(arr, count) {
+  if (count === 0) {
+    return [];
+  }
   return arr.slice(-count);
 }
 
