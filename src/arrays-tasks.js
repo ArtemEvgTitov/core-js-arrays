@@ -38,10 +38,15 @@ function getIntervalArray(start, end) {
  *    sumArrays([-1, 0, 1], [1, 2, 3, 4]) => [0, 2, 4, 4]
  */
 function sumArrays(arr1, arr2) {
+  const maxLength = Math.max(arr1.length, arr2.length);
   const result = [];
-  for (let i = 0; i < arr1.length; i += 1) {
-    result.push(arr1[i] + arr2[i]);
+
+  for (let i = 0; i < maxLength; i += 1) {
+    const value1 = arr1[i] !== undefined ? arr1[i] : 0;
+    const value2 = arr2[i] !== undefined ? arr2[i] : 0;
+    result.push(value1 + value2);
   }
+
   return result;
 }
 
@@ -104,8 +109,7 @@ function removeFalsyValues(arr) {
       word !== 0 &&
       word !== '' &&
       word !== null &&
-      word !== undefined &&
-      word !== NaN
+      word !== undefined
   );
   return result;
 }
@@ -444,8 +448,8 @@ function generateOdds(len) {
  *   getElementByIndices(['one','two','three'], [2]) => 'three'  (arr[2])
  *   getElementByIndices([[[ 1, 2, 3]]], [ 0, 0, 1 ]) => 2        (arr[0][0][1])
  */
-function getElementByIndices(/* arr, indices */) {
-  throw new Error('Not implemented');
+function getElementByIndices(arr, indices) {
+  return indices.reduce((acc, index) => acc[index], arr);
 }
 
 /**
