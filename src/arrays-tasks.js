@@ -166,9 +166,9 @@ function getAverage(arr) {
  *    isSameLength(['cat', 'dog', 'elephant']) => false
  */
 function isSameLength(arr) {
-  let index = 0;
+  let index = 1;
   while (index < arr.length) {
-    if (arr[index].length === arr[index + 1].length) {
+    if (arr[index].length === arr[index - 1].length) {
       index += 1;
     } else {
       return false;
