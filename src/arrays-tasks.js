@@ -398,15 +398,10 @@ function calculateBalance(arr) {
  */
 function createChunks(arr, chunkSize) {
   const result = [];
-  for (let i = 0; i < arr.length; i += 1) {
-    let count = 0;
-    const item = [];
-    while (count < chunkSize) {
-      item.push(arr[i]);
-      count += 1;
-    }
-    result.push(item);
+  for (let i = 0; i < arr.length; i += chunkSize) {
+    result.push(arr.slice(i, i + chunkSize));
   }
+
   return result;
 }
 
