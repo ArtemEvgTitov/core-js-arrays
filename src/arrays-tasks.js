@@ -541,8 +541,15 @@ function getIndicesOfOddNumbers(numbers) {
  *    getHexRGBValues([ 0, 255, 16777215]) => [ '#000000', '#0000FF', '#FFFFFF' ]
  *    getHexRGBValues([]) => []
  */
-function getHexRGBValues(/* arr */) {
-  throw new Error('Not implemented');
+function getHexRGBValues(arr) {
+  const hexValues = [];
+
+  for (let i = 0; i < arr.length; i += 1) {
+    const hex = arr[i].toString(16).toUpperCase().padStart(6, '0');
+    hexValues.push(`#${hex}`);
+  }
+
+  return hexValues;
 }
 
 /**
