@@ -103,15 +103,7 @@ function findAllOccurrences(arr, val) {
  *    removeFalsyValues([ false, 0, NaN, '', undefined ]) => [ ]
  */
 function removeFalsyValues(arr) {
-  const result = arr.filter(
-    (word) =>
-      word !== false &&
-      word !== 0 &&
-      word !== '' &&
-      word !== null &&
-      word !== undefined
-  );
-  return result;
+  return arr.filter(Boolean);
 }
 
 /**
