@@ -117,11 +117,7 @@ function removeFalsyValues(arr) {
  *    getStringsLength([ 'angular', 'react', 'ember' ]) => [ 7, 5, 5 ]
  */
 function getStringsLength(arr) {
-  const result = [];
-  for (let i = 0; i < arr.length; i += 1) {
-    result.push(arr[i].length);
-  }
-  return result;
+  return arr.map((str) => str.length);
 }
 
 /**
