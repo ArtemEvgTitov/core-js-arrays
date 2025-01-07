@@ -275,16 +275,7 @@ function toStringList(arr) {
  *   distinct([]) => []
  */
 function distinct(arr) {
-  if (arr.length === 0) {
-    return arr;
-  }
-  const result = [];
-  for (let i = 0; i < arr.length; i += 1) {
-    if (!result.includes(arr[i])) {
-      result.push(arr[i]);
-    }
-  }
-  return result;
+  return [...new Set(arr)];
 }
 
 /**
