@@ -178,15 +178,7 @@ function isSameLength(arr) {
  *    isValueEqualsIndex([10, 20, 30, 40, 50]) => false
  */
 function isValueEqualsIndex(arr) {
-  let index = 0;
-  while (index < arr.length) {
-    if (arr[index] !== index) {
-      index += 1;
-    } else {
-      return true;
-    }
-  }
-  return false;
+  return arr.some((value, index) => value === index);
 }
 
 /**
